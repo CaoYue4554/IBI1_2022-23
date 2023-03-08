@@ -5,3 +5,5 @@ In this Practical, I faced the following problems:
 4. On the error of "not found" in pull, I forgot the quote mark out of URL.
 5. On the error of "permission denied" in pull, I changed the directory to home.
 6. When creating my website, I need to change the _config.yml, adding theme, discription, and title.                                         
+
+Still, I wonder how to add pictures on my website.
