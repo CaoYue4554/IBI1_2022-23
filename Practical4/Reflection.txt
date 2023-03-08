@@ -1,0 +1,7 @@
+In this Practical, I faced the following problems:
+1. At first, git warns me "please tell me who you are." The problem is solved by "git config --global user.email"""
+2. On the error of "srcrefspec master" in push, I need to use "origin master" when the main branch is called master; main when the brach is called main.
+3. On the error of "fail to push some refs", I cloned the repo from Github again.
+4. On the error of "not found" in pull, I forgot the quote mark out of URL.
+5. On the error of "permission denied" in pull, I changed the directory to home.
+6. When creating my website, I need to change the _config.yml, adding theme, discription, and title.                                         
