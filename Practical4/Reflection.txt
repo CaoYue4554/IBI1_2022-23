@@ -1,4 +1,5 @@
-In this Practical, I faced the following problems:
+I am happy to report most problems are solved! 
+In this Practical, I faced the following challeges:
 1. At first, git warns me "please tell me who you are." The problem is solved by "git config --global user.email"""
 2. On the error of "srcrefspec master" in push, I need to use "origin master" when the main branch is called master; main when the brach is called main.
 3. On the error of "fail to push some refs", I cloned the repo from Github again.
