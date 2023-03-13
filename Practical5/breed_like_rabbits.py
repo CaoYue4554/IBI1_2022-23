@@ -21,3 +21,13 @@ next_generation=str(generation)
 
 print("The rabbits will exceed 100 in the %sth generation." %next_generation)
 
+
+
+#results:
+#2.0
+#4.0
+#8.0
+#16.0
+#32.0
+#64.0
+#The rabbits will exceed 100 in the 7th generation.
