@@ -4,9 +4,9 @@ b=-118.24
 #LA logitude
 c=116.39
 #Haining longitude
-d==b-a
+d=b-a
 print(d)
 #LA and Edinburgh
-e==c-a
+e=c-a
 #Haining and Edinburgh
 d>e
