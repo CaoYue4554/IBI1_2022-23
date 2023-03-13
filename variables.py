@@ -14,3 +14,11 @@ if d>e:
 elif d<e:
  print("The trip to Haining is further")
 #e is greater. The trip to Haining is further.
+
+X=True
+Y=False
+W=X and Y
+print(W)
+Z=X or Y
+print(Z)
+#W is False. Z is True.
