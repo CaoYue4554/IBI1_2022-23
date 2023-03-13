@@ -4,3 +4,4 @@
 for n in range(1,6):
   h = n*(2*n-1)
   print(h)
+#1,6,15,28,45
