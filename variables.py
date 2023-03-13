@@ -4,9 +4,12 @@ b=-118.24
 #LA logitude
 c=116.39
 #Haining longitude
-d=b-a
+d=a-b
 print(d)
 #LA and Edinburgh
 e=c-a
 #Haining and Edinburgh
-d>e
+if d>e:
+ print("The trip to LA is further")
+elif d<e:
+ print("The trip to Haining is further")
