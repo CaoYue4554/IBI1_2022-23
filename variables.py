@@ -1,8 +1,8 @@
-a==-3.19
+a=-3.19
 #Edinburgh longitude
-b==-118.24
+b=-118.24
 #LA logitude
-c==116.39
+c=116.39
 #Haining longitude
 b-a==d
 print(d)
