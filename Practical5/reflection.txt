@@ -1,0 +1,6 @@
+This week, we start learning Python. I learnt how to launch Python on git and edit my code in nano.
+Here are some problems I came across and settled:
+1. In git MINGW64, type "Python" cannot launch Python, so I should type "winpty python".  
+2. At first, I always forget the indents in a loop, so I made mistakes.
+3. I learnt "+=" means "+" and store the result into the variable in mystery code. Then I used in the rabbit problem.
+4. I am confused by "==" and "=" at first. Now I know I should use "=" when defining variables.
