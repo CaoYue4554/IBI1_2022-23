@@ -13,3 +13,4 @@ if d>e:
  print("The trip to LA is further")
 elif d<e:
  print("The trip to Haining is further")
+#e is greater. The trip to Haining is further.
