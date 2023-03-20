@@ -7,7 +7,7 @@ Then type certain keys to show the corresponding value.
 
 import matplotlib.pyplot as plt
 
-movie_genre = {'Comedy':73, 'Action':42, 'Romance':38, 'Fantasy':28, 'Science-fiction':22,'Horror':19,'Cri>
+movie_genre = {'Comedy':73, 'Action':42, 'Romance':38, 'Fantasy':28, 'Science-fiction':22,'Horror':19,'Crime':18,'Documentary':12,'History':8,'War':7}
 print(movie_genre)
 
 labels=movie_genre.keys()
@@ -20,6 +20,6 @@ print(movie_genre['Comedy'])
 
 
 #Results:
-#{'Comedy': 73, 'Action': 42, 'Romance': 38, 'Fantasy': 28, 'Science-fiction': 22, 'Horror': 19, 'Crime': >
+#{'Comedy': 73, 'Action': 42, 'Romance': 38, 'Fantasy': 28, 'Science-fiction': 22, 'Horror': 19, 'Crime':18,'Documentary':12,'History':8,'War':7}
 #73
 
