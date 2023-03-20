@@ -1,0 +1,7 @@
+I learnt how to import packages into python. First, we need to type the following code in shell:
+python -m pip install -U pip setuptools #Update pip
+python -m pip install matplotlib #setup matplot
+After that, python can use matplotlib. But if we want to use matplotlib on pycharm, we should click file,
+settings, find the right intepreter with the packages, and switch into the intepreter. After that, we click 
+on the small "+" and search for matplotlib in virtual environment. Later, we download it in venv, and apply
+it. Type import in coding surface, then we can use it to make the plot.
