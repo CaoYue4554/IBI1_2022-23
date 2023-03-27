@@ -1,0 +1,6 @@
+Question: Will the total death rate of COVID-19 drop in China overtime?
+Answer:line 78-89
+I expected the rate to decrease slowly, however it was rising. This might be due to some inaccurate data
+at the beginning of the pandemic. By that time, many officers tended to hide the real deaths and cases.
+So the data was not completely correct. Also, it can be because COVID-19 death rate was not changing 
+dramatically at first since the virus was not evolving so fast.
