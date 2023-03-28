@@ -6,7 +6,6 @@ pd.set_option('display.max_columns',None)
 # show all columns
 os.chdir("D:/2023Grade1/IBI1")
 os.getcwd()
-
 os.listdir()
 covid_data=pd.read_csv("full_data.csv")
 print(covid_data.head(5))
@@ -17,12 +16,11 @@ print(covid_data.describe())
 # total cases:1.000000e+00-7.610711e+08
 print(covid_data.iloc[0:100:2,0:5])
 # iloc[x:y:z],means show the column from every 2 rows in the first 100 rows.
-print(covid_data.iloc[1:1001:100])
+print(covid_data.iloc[0:1001:100,1])
 my_columns=[True,False,True,False,True,False]
 print(covid_data.iloc[0:3,my_columns])
-# If my_columns is shorter or longer, it will report Indexerror.
+# If my_columns is shorter or longer, it will report Index error.
 print(covid_data.loc[2:4,"date"])
-
 my_rows = covid_data["location"] == "Afghanistan"
 print(my_rows)
 # my_rows is
@@ -38,12 +36,13 @@ print(my_rows)
 # 7994    False
 # 7995    False
 print(covid_data.loc[my_rows, "total_cases"])
-
-new_data=covid_data.loc[covid_data["date"]=="2020-03-31",["location","new_cases","new_deaths"]]
+new_data1=covid_data.loc[covid_data["location"]!="World",["date","location","new_cases","new_deaths"]]
+new_data=new_data1.loc[new_data1["date"]=="2020-03-31",["location","new_cases","new_deaths"]]
+print(new_data)
 print(new_data.describe())
 print(np.mean(new_data["new_cases"]))
 print(np.mean(new_data["new_deaths"]))
-# The mean of new_cases is 1142.938525, new_deaths is 83.764228. the proportion is 0.07.
+# The mean of new_cases is 321.89, new_deaths is 19.06. the proportion is 0.05.
 plt.boxplot(x=new_data["new_deaths"])
 plt.title("new deaths on 2020-03-31")
 plt.show()
@@ -55,25 +54,26 @@ world_data = covid_data.loc[covid_data["location"] == "World", "new_cases"]
 world_data1 = covid_data.loc[covid_data["location"] == "World", "new_deaths"]
 world_dates = covid_data.loc[covid_data["location"] == "World", "date"]
 
-fig, ax1 = plt.subplots(figsize=(30,5))
+plt.plot(figsize=(30,5))
 # subplots means I can manage different map layers through "axes". figsize controls the length and width.
-ax2 = ax1.twinx()
-# twinx() means two y axes.
-ax1.plot(world_dates, world_data, 'b--', label='new cases')
-ax2.plot(world_dates, world_data1, 'r--', label='new deaths')
 
-handles1, labels1 = ax1.get_legend_handles_labels()
+plt.plot(world_dates, world_data, 'b--', label='new cases')
+plt.plot(world_dates, world_data1, 'r--', label='new deaths')
+
+'''handles1, labels1 = ax1.get_legend_handles_labels()
 handles2, labels2 = ax2.get_legend_handles_labels()
 plt.legend(handles=handles1 + handles2, labels=labels1 + labels2)
-# legends
+# legends'''
 plt.xticks(world_dates.iloc[0:len(world_dates):4])
 # show x ticks every 4 days.
-ax1.set_xticklabels(ax1.get_xticklabels(), rotation=90,fontsize=6)
+plt.xticks(rotation=90,fontsize=6)
 # rotate the ticks
-ax1.set_ylabel('Number of new cases')
-ax2.set_ylabel('Number of deaths')
+plt.ylabel('Number')
 plt.title("worldwide COVID-19 new deaths and new cases overtime")
+plt.legend()
 plt.show()
+
+
 
 china_data=covid_data.loc[covid_data['location']=='China',['total_cases','total_deaths']]
 
