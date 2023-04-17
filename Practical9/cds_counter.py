@@ -12,5 +12,5 @@ def stops(stops,seq):
         else:
             break
     return count
-codeseq = stops("TAA",seq) + stops("TGA",seq)
+codeseq = stops("TAA",seq) + stops("TGA",seq) +stops("TAG", seq)
 print(codeseq)
