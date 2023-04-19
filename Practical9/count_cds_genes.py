@@ -1,56 +1,31 @@
-stopcode = input("Input your stop code:")
 import re
-def stops(stops,seq): # define the function to get the number of code sequence.
-    pos = re.findall(stops,seq)
-    count = 0
-    posss = seq.find("ATG") + 3 # Find the earliest ATG. +3 to make sure ATG will not overlap with the stop code.
-    for poss in range(len(pos)):
-        sit = posss + 1 # Start searching after ATG, so the stopcode will not appear earlier than ATG.
-        if seq.find(stops,sit) != -1:
-            posss = seq.find(stops,sit)
-            count += 1 # count times
-        else:
-            break
-    return count
+def stops(stopcode,seq):
+    posss = int(seq.find("ATG") + 3) # Find the earliest ATG. +3 to make sure ATG will not overlap with the stop code.
+    num = len(re.findall(stopcode, seq[posss:]))
+    return num
+
+stopcode = input("Input your stop code:")
 
 xfile = open('Saccharomyces_cerevisiae.R64-1-1.cdna.all.fa','r')
-out = open("genespre.fa","w")
-for lines in xfile:
-    if re.match("[ATGC]",lines): # make the gene sequences on one line
-        lines =re.sub("\n","",lines)
+out = open(f"{stopcode}_genes.fa","w")
+xxflie =xfile.read()
+DNAlist = re.split("\n>",xxflie)
+DNAlist_2 = []
+for item in range(len(DNAlist)):
+    items = re.sub(r"na.+?\n", '', DNAlist[item])  # delete the useless information after the name.
+    items = re.sub("\n","",items)  # delete the \n inside the sequence.
+    items = re.sub("d","\n",items)  # change lines between the name of the gene and the sequence.
+    items = re.sub("^","\n>",items)  # add \n> at the beginning.
+    DNAlist_2.append(items)
+DNAlist_2[0] = re.sub("\n>", "", DNAlist_2[0]) # delete the \n on the first row.
+
+for i in range(len(DNAlist_2)):  # delete the \n at the beginning of each line. When they find the first one, quit.
+    if re.search(f"{stopcode}$",DNAlist_2[i]):
+        DNAlist_2[i] = re.sub("^\n", "", DNAlist_2[i])
+        break
+
+for lines in DNAlist_2:
+    if re.search(f"{stopcode}$",lines):
+        lines = re.sub('c',str(stops(stopcode,lines)),lines)  # use the c to input my coding sequence.
         out.write(lines)
-    if re.match(">",lines): # make the gene name shorter, and put it in one line with the genes
-        lines = re.sub(r'(>)','\n\\1',lines)
-        lines = re.sub(r"(dna.+?\n)",'',lines) # in "cdna", I only delete "dna" because I need the "c" to help me locate the end of gene name line.
-        out.write(lines)
-out.close()
-
-if stopcode == "TGA":
-    out = open("TGA_genes.fa","w")
-    fil = open("genespre.fa")
-    for lines in fil:
-        if re.search("TGA$",lines):
-            lines = re.sub(r'(c)','P\n',lines) # use "c" to find the end and change lines
-            lines = re.sub(r'(P)',str(stops('TGA',lines)),lines) # use the P to input my stop code.
-            out.write(lines)
-    out.close() # It is now stored in the file.
-
-if stopcode == "TAA":
-    out = open("TAA_genes.fa","w")
-    fil = open("genespre.fa")
-    for lines in fil:
-        if re.search("TAA$",lines):
-            lines = re.sub(r'(c)','P\n',lines)
-            lines = re.sub(r'(P)',str(stops('TAA',lines)),lines)
-            out.write(lines)
-    out.close() # It is now stored in the file.
-
-if stopcode == "TAG":
-    out = open("TAG_genes.fa","w")
-    fil = open("genespre.fa")
-    for lines in fil:
-        if re.search("TAG$",lines):
-            lines = re.sub(r'(c)','P\n',lines)
-            lines = re.sub(r'(P)',str(stops('TAG',lines)),lines)
-            out.write(lines)
-    out.close() # It is now stored in the file.
+out.close()  # It is now stored in the file.
