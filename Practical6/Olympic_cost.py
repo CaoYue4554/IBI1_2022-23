@@ -1,5 +1,6 @@
 """
 sort the data in both directions.
+make sure the city names also change with the sorting of costs
 Make a bar plot
 """
 import numpy as np
