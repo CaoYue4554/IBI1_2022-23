@@ -1,5 +1,5 @@
 class triathlon(object):
-    def __init__(self,firstname,lastname,location,swim,cycle,run):
+    def __init__(self, firstname, lastname, location, swim, cycle, run):
         self.firstname = firstname
         self.lastname = lastname
         self.location = location
@@ -7,7 +7,11 @@ class triathlon(object):
         self.cycle = cycle
         self.run = run
         self.totaltime = swim + cycle + run
+
     def speak(self):
-        print(triathlon.firstname,triathlon.lastname,triathlon.location,triathlon.swim,triathlon.cycle,triathlon.run,triathlon.totaltime)
-someone= triathlon("Steve","Rogers","New York",1,1,1)
+        print("name: {} {}, location: {}, swim: {}s, cycle: {}s, run: {}s, total time: {}s".format(self.firstname, self.lastname, self.location, self.swim, self.cycle,
+              self.run, self.totaltime))
+
+
+someone = triathlon("Steve", "Rogers", "New York", 1, 1, 1)
 someone.speak()
