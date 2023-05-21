@@ -1,15 +1,12 @@
 cat and mouse: score3592, 82% identical.
 mouse and human: score3579, 82% identical.
 cat and human: score3717, 85% identical.
-Based on the score and the identities percentage, we can see that cat and human
-has the most similar ACE2 protein, so they are the most closely related.
+Based on the score and the identities percentage, we can see that cat and human has the most similar ACE2 protein, so they are the most closely related.
 
-Since the similarity of the protein can partly reflect the originality and 
-evolutionary distance the protein, we can deduce that the ACE2 in cat and human are more closely related
-during evolution. On the evolution tree, ACE2 in mouse separated from the common ancestor 
-of the ACE2 in cat and human first. Then, after some time, human ACE2 and cat ACE2 separate into 
-different evolutionary paths.
+Since the similarity of the protein can partly reflect the homology and evolutionary distance of the protein, 
+we can deduce that the ACE2 in cat and human are more closely related during evolution. 
+On the evolution tree, ACE2 in mouse separated from the common ancestor of the ACE2 in cat and human first. 
+Then, after some time, human ACE2 and cat ACE2 went into different evolutionary paths.
 
-However, we should also be aware that the analysis above is based on only one 
-protein, and similarity is not perfectly reflecting the originality,
+However, we should also be aware that the analysis above is based on only one protein, and similarity is not perfectly reflecting the evolutionary distance,
 so it can be far from the real case.
