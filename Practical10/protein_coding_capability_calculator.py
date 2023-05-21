@@ -1,6 +1,6 @@
 import re
 def codecap(DNA):
-    DNA_change = re.sub("ATG.+?TGA","",DNA,flags=re.IGNORECASE)
+    DNA_change = re.sub("ATG.*?TGA","",DNA,flags=re.IGNORECASE)
     percentage = 1-(len(DNA_change)+6)/len(DNA)
     if percentage > 0.5:
         print(percentage*100,"%","protein-coding")
