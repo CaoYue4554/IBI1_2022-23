@@ -15,3 +15,5 @@ DNAlist_2[0] = re.sub("^\n>","",DNAlist_2[0])  # delete the \n on the first row.
 for lines in DNAlist_2:
     if re.search("TGA$",lines):  # Find TGA
         out.write(lines)
+
+out.close()
