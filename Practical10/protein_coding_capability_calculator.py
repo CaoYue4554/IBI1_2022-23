@@ -10,5 +10,7 @@ def codecap(DNA):
         print(percentage*100,"%","unclear")
     return percentage
 
+# This code will report the percentage without including "ATG" and "TGA"
 DNA = "AAAAtGGGGTGA"
+print("'ATG' and 'TGA' not included.")
 codecap(DNA)
